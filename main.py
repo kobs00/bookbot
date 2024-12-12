@@ -3,7 +3,6 @@ def main():
         file_contents = f.read()
     return file_contents
 
-
 def count_words(file_contents):
     word_count = 0
     for word in file_contents.split():
@@ -19,7 +18,6 @@ def count_chars(file_contents):
             char_count[char] = 1
     return char_count
 
-
 file_name = "books/frankenstein.txt"
 char_analysis = []
 
@@ -34,4 +32,7 @@ print(
     + "\n" + "--- End report ---"
 )
 
-
+# learnings:
+# do not concatenate the print function if you want to embed a for condition in it - 
+# i.e print('\n'.join([f"The '{char}' character was found {count} times" for char, count in sorted(count_chars(main()).items(), key=lambda item: item[1], reverse=True)]))
+# should do the same as the for loop -> char_analysis var
